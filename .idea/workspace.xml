@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9deba204-f66b-424c-b614-087d060e7b88" name="Changes" comment="" />
+    <list default="true" id="9deba204-f66b-424c-b614-087d060e7b88" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/www/php2/public/App/Db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/php2/public/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/php2/public/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/php2/public/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/php2/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +22,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21ELnAuvB5FhNIDpiTIwSQAgOQr" />
   <component name="ProjectViewState">
@@ -22,11 +30,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www/php2/public" />
+      <recent name="$PROJECT_DIR$/www/php2/public/lesson1" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -41,10 +58,25 @@
       <workItem from="1637502851435" duration="1763000" />
       <workItem from="1637506182766" duration="1189000" />
       <workItem from="1638086844543" duration="1811000" />
+      <workItem from="1638101711143" duration="739000" />
+      <workItem from="1638859263474" duration="5015000" />
+      <workItem from="1639298576753" duration="3566000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
