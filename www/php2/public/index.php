@@ -1,8 +1,10 @@
 <?php
+
 require __DIR__ . '/autoload.php';
 
+$data = \App\Models\User::findAll();
 
-$db = new \App\Db();
-$data = $db->query('SELECT * FROM news');
 
+echo '<pre>';
 var_dump($data);
+echo '</pre>';
