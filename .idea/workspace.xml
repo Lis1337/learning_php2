@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9deba204-f66b-424c-b614-087d060e7b88" name="Changes" comment="problems">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/php2/public/App/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/php2/public/App/Models/Article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/php2/public/App/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/php2/public/App/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/App/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/php2/public/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/php2/public/App/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/App/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/php2/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/www/php2/public/App/Models" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -84,7 +76,8 @@
       <workItem from="1639305122427" duration="1184000" />
       <workItem from="1639306509899" duration="4614000" />
       <workItem from="1639378228805" duration="2260000" />
-      <workItem from="1639893612311" duration="11292000" />
+      <workItem from="1639893612311" duration="18476000" />
+      <workItem from="1640584532376" duration="833000" />
     </task>
     <task id="LOCAL-00001" summary="problems">
       <created>1639302171539</created>
