@@ -21,10 +21,23 @@ class Db
         return $this->dbh->query($sql)->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 
-    public function execute($query, $params=[]): bool
+    public function execute($sql, $params=[], $columns=[]): bool
     {
-        $sth = $this->dbh->prepare($query);
-        $sth->bindParam(':params', $params, PDO::PARAM_STR);
+        $sth = $this->dbh->prepare($sql);
+        $sth->bindParam(
+            ':' . $columns[array_key_first($columns)],
+            $params[array_key_first($params)]
+        );
+        $sth->bindParam(
+            ':' . $columns[array_key_first($columns) + 1],
+            $params[array_key_first($params) + 1]
+        );
+        if (count($columns) > 2) {
+            $sth->bindParam(
+                ':' . $columns[array_key_last($columns)],
+                $params[array_key_last($params)]
+            );
+        }
         return $sth->execute();
     }
 }

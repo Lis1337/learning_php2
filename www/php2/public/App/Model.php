@@ -21,17 +21,30 @@ abstract class Model
         );
     }
 
-    public static function exec($query)
+    public static function exec($query, $params=[])
     {
+        $table = static::TABLE;
+        $columns = array_keys(get_class_vars(get_called_class()));
+
         if ($query == 'insert') {
-            $sql = 'INSERT INTO' . ' ' . static::TABLE . ' (title, content)' .
-                " VALUES ( :params )";
-        }
-        var_dump($sql);
+            if ($columns[array_key_last($columns)] == 'id') {
+                array_pop($columns);
+            }
+            $sql = 'INSERT INTO' . ' ' . $table
+                . ' (' . implode(', ', $columns) . ') '
+                . 'VALUES (:' . implode(', :', $columns) . ')';
+        } elseif ($query == 'update') {
+            $sql = 'UPDATE ' . $table . ' SET '
+                . $columns[array_key_first($columns)] . ' = :' . $columns[array_key_first($columns)] . ', '
+                . $columns[array_key_first($columns) + 1] . ' = :' . $columns[array_key_first($columns) + 1]
+                . ' WHERE id = ' . ':' . $columns[array_key_last($columns)];
+        } else {echo 'undefined query';}
 
         $db = new Db();
         return $db->execute(
-            $sql
+            $sql,
+            $params,
+            $columns
         );
     }
 }

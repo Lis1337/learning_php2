@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9deba204-f66b-424c-b614-087d060e7b88" name="Changes" comment="problems">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/php2/public/App/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/App/Db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/php2/public/App/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/App/Model.php" afterDir="false" />
@@ -85,7 +83,7 @@
       <workItem from="1641372023034" duration="3000" />
       <workItem from="1641373503518" duration="4589000" />
       <workItem from="1641378208110" duration="1125000" />
-      <workItem from="1641458062034" duration="7661000" />
+      <workItem from="1641458062034" duration="17517000" />
     </task>
     <task id="LOCAL-00001" summary="problems">
       <created>1639302171539</created>
