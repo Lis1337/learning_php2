@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Article;
 use http\Params;
 
 abstract class Model
@@ -13,7 +14,6 @@ abstract class Model
     {
         $db = new Db();
         $sql = 'SELECT * FROM' . ' ' . static::TABLE;
-        var_dump($sql);
         return $db->query(
             $sql,
             [],
@@ -21,14 +21,17 @@ abstract class Model
         );
     }
 
-    public static function execute($query, $params): bool
+    public static function exec($query)
     {
-        $db = new Db();
-        $sql = $query . ' ' . static::TABLE . ' ' . 'VALUES ' . '(' . implode(', ', $params) . ')';
+        if ($query == 'insert') {
+            $sql = 'INSERT INTO' . ' ' . static::TABLE . ' (title, content)' .
+                " VALUES ( :params )";
+        }
         var_dump($sql);
+
+        $db = new Db();
         return $db->execute(
-            $sql,
-            $params
+            $sql
         );
     }
 }

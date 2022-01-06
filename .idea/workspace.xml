@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9deba204-f66b-424c-b614-087d060e7b88" name="Changes" comment="problems">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0fa7d930-4737-4d8d-ab60-15c328cb1402.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/php2/public/App/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/php2/public/App/Db.php" afterDir="false" />
@@ -28,8 +29,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21ELnAuvB5FhNIDpiTIwSQAgOQr" />
   <component name="ProjectViewState">
@@ -45,7 +46,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/www/php2/public/App/Models" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -77,7 +78,14 @@
       <workItem from="1639306509899" duration="4614000" />
       <workItem from="1639378228805" duration="2260000" />
       <workItem from="1639893612311" duration="18476000" />
-      <workItem from="1640584532376" duration="833000" />
+      <workItem from="1640584532376" duration="1901000" />
+      <workItem from="1640586445288" duration="1883000" />
+      <workItem from="1641371720271" duration="11000" />
+      <workItem from="1641371745220" duration="264000" />
+      <workItem from="1641372023034" duration="3000" />
+      <workItem from="1641373503518" duration="4589000" />
+      <workItem from="1641378208110" duration="1125000" />
+      <workItem from="1641458062034" duration="7661000" />
     </task>
     <task id="LOCAL-00001" summary="problems">
       <created>1639302171539</created>

@@ -24,6 +24,7 @@ class Db
     public function execute($query, $params=[]): bool
     {
         $sth = $this->dbh->prepare($query);
+        $sth->bindParam(':params', $params, PDO::PARAM_STR);
         return $sth->execute();
     }
 }
