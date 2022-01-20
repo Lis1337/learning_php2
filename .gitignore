@@ -1,5 +1,6 @@
 test.php
 .env
+www/php2/public/config.php
 logs/
 mysql/
 idea/
