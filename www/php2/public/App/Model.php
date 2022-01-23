@@ -27,12 +27,9 @@ abstract class Model
         $columns = array_keys(get_class_vars(get_called_class()));
 
         if ($query == 'insert') {
-            if ($columns[array_key_last($columns)] == 'id') {
-                array_pop($columns);
-            }
             $sql = 'INSERT INTO' . ' ' . $table
                 . ' (' . implode(', ', $columns) . ') '
-                . 'VALUES (:' . implode(', :', $columns) . ')';
+                . 'VALUES (' . implode(', ', $params) . ')';
         } elseif ($query == 'update') {
             $sql = 'UPDATE ' . $table . ' SET '
                 . $columns[array_key_first($columns)] . ' = :' . $columns[array_key_first($columns)] . ', '
@@ -40,11 +37,11 @@ abstract class Model
                 . ' WHERE id = ' . ':' . $columns[array_key_last($columns)];
         } else {echo 'undefined query';}
 
+        var_dump($params);
         $db = new Db();
         return $db->execute(
             $sql,
             $params,
-            $columns
         );
     }
 }

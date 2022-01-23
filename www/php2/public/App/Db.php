@@ -18,26 +18,14 @@ class Db
 
     public function query($sql, $data=[], $class)
     {
-        return $this->dbh->query($sql)->fetchAll(\PDO::FETCH_CLASS, $class);
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+        return $sth->fetchAll();
     }
 
-    public function execute($sql, $params=[], $columns=[]): bool
+    public function execute($sql, $params=[]): bool
     {
         $sth = $this->dbh->prepare($sql);
-        $sth->bindParam(
-            ':' . $columns[array_key_first($columns)],
-            $params[array_key_first($params)]
-        );
-        $sth->bindParam(
-            ':' . $columns[array_key_first($columns) + 1],
-            $params[array_key_first($params) + 1]
-        );
-        if (count($columns) > 2) {
-            $sth->bindParam(
-                ':' . $columns[array_key_last($columns)],
-                $params[array_key_last($params)]
-            );
-        }
-        return $sth->execute();
+        return $sth->execute($params);
     }
 }
