@@ -2,18 +2,12 @@
 
 require __DIR__ . '/autoload.php';
 
+$asd = new \App\Models\Article();
+$asd->content = 'content.test';
+$asd->title = 'title.test';
+$asd->insert();
 
-$addRow = \App\Models\Article::exec('insert', ['asdasd', 'asdasdasdasd']);
-//$updateRow = \App\Models\Article::exec('update', ['firsttry', 'firsttry', 4]);
-
-var_dump($addRow);
-//var_dump($updateRow);
-
-
-/*$testRow = \App\Models\User::findAll();
-
+$testRow = \App\Models\Article::findAll();
 echo "<pre>";
 var_dump($testRow);
 echo "</pre>";
-
-*/

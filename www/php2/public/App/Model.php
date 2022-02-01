@@ -7,41 +7,39 @@ use http\Params;
 
 abstract class Model
 {
-    public $id;
     public const TABLE = '';
 
-    public static function findAll()
+    public int $id;
+
+    public static function findAll(): array
     {
-        $db = new Db();
+        $db = Db::instance();
         $sql = 'SELECT * FROM' . ' ' . static::TABLE;
         return $db->query(
             $sql,
-            [],
             static::class
         );
     }
 
-    public static function exec($query, $params=[])
+    public function insert()
     {
-        $table = static::TABLE;
-        $columns = array_keys(get_class_vars(get_called_class()));
+        $props = get_object_vars($this);
 
-        if ($query == 'insert') {
-            $sql = 'INSERT INTO' . ' ' . $table
-                . ' (' . implode(', ', $columns) . ') '
-                . 'VALUES (' . implode(', ', $params) . ')';
-        } elseif ($query == 'update') {
-            $sql = 'UPDATE ' . $table . ' SET '
-                . $columns[array_key_first($columns)] . ' = :' . $columns[array_key_first($columns)] . ', '
-                . $columns[array_key_first($columns) + 1] . ' = :' . $columns[array_key_first($columns) + 1]
-                . ' WHERE id = ' . ':' . $columns[array_key_last($columns)];
-        } else {echo 'undefined query';}
+        $columns  = [];
+        $binds = [];
+        $data = [];
+        foreach ($props as $name => $value) {
+            $columns[] = $name;
+            $binds[] = ':' . $name;
+            $data[':' . $name] = $value;
+        }
 
-        var_dump($params);
-        $db = new Db();
-        return $db->execute(
-            $sql,
-            $params,
-        );
+        $sql = 'INSERT INTO ' . static::TABLE .
+            ' (' . implode(',', $columns) .
+            ') VALUES (' . implode(',', $binds) . ')';
+
+        $db = Db::instance();
+        $db->execute($sql, $data);
+        $this->id = $db->lastId();
     }
 }
