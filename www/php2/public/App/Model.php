@@ -15,20 +15,25 @@ abstract class Model
     {
         $db = Db::instance();
         $sql = 'SELECT * FROM' . ' ' . static::TABLE;
-        return $db->query(
-            $sql,
-            static::class
-        );
+        return $db->query($sql, static::class);
     }
 
-    public function insert()
+    public function findById(): array
     {
-        $props = get_object_vars($this);
+        $db = Db::instance();
+        $sql = 'SELECT * FROM' . ' ' . static::TABLE .
+            ' WHERE id = ' . $this->id;
+        return $db->query($sql, static::class);
+    }
+
+    protected function insert()
+    {
+        $properties = get_object_vars($this);
 
         $columns  = [];
         $binds = [];
         $data = [];
-        foreach ($props as $name => $value) {
+        foreach ($properties as $name => $value) {
             $columns[] = $name;
             $binds[] = ':' . $name;
             $data[':' . $name] = $value;
@@ -41,5 +46,46 @@ abstract class Model
         $db = Db::instance();
         $db->execute($sql, $data);
         $this->id = $db->lastId();
+    }
+
+    protected function update()
+    {
+        $properties = get_object_vars($this);
+        $column = [];
+        $data = [];
+
+        foreach ($properties as $name => $value) {
+            if ($name == 'id') {
+                $data[':' . "$name"] = $value;
+            }
+            if (!is_null($value) && $name != 'id') {
+                $column[] = "$name" . ' = ' . ":$name";
+                $data[':' . "$name"] = $value;
+            }
+        }
+        $sql = 'UPDATE ' . static::TABLE . ' SET ' .
+            implode(', ', $column) .
+            ' WHERE id = :id';
+
+        $db = Db::instance();
+        $db->execute($sql, $data);
+    }
+
+    public function save()
+    {
+        if ($this->findById() == null) {
+            $this->insert();
+        } else {$this->update();}
+    }
+
+    public function delete(): bool
+    {
+        if ($this->findById() != null) {
+            $sql = 'DELETE FROM' . ' ' . static::TABLE .
+                ' WHERE id = ' . $this->id;
+        } else {return false;}
+
+        $db = Db::instance();
+        return $db->execute($sql);
     }
 }
