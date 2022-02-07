@@ -15,15 +15,15 @@ abstract class Model
     {
         $db = Db::instance();
         $sql = 'SELECT * FROM' . ' ' . static::TABLE;
-        return $db->query($sql, static::class);
+        return $db->query($sql, [], static::class);
     }
 
-    public function findById(): array
+    public static function findById($id): array
     {
         $db = Db::instance();
         $sql = 'SELECT * FROM' . ' ' . static::TABLE .
-            ' WHERE id = ' . $this->id;
-        return $db->query($sql, static::class);
+            ' WHERE id = ' . $id;
+        return $db->query($sql, [], static::class);
     }
 
     protected function insert()
@@ -55,14 +55,12 @@ abstract class Model
         $data = [];
 
         foreach ($properties as $name => $value) {
-            if ($name == 'id') {
-                $data[':' . "$name"] = $value;
-            }
+            $data[':' . "$name"] = $value;
             if (!is_null($value) && $name != 'id') {
                 $column[] = "$name" . ' = ' . ":$name";
-                $data[':' . "$name"] = $value;
             }
         }
+
         $sql = 'UPDATE ' . static::TABLE . ' SET ' .
             implode(', ', $column) .
             ' WHERE id = :id';
@@ -73,17 +71,17 @@ abstract class Model
 
     public function save()
     {
-        if ($this->findById() == null) {
+        if (isset($this->id)) {
+            $this->update();
+        } else {
             $this->insert();
-        } else {$this->update();}
+        }
     }
 
-    public function delete(): bool
+    public static function delete($id): bool
     {
-        if ($this->findById() != null) {
-            $sql = 'DELETE FROM' . ' ' . static::TABLE .
-                ' WHERE id = ' . $this->id;
-        } else {return false;}
+        $sql = 'DELETE FROM' . ' ' . static::TABLE .
+            ' WHERE id = ' . $id;
 
         $db = Db::instance();
         return $db->execute($sql);

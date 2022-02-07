@@ -4,7 +4,7 @@
 namespace App;
 
 
-class config
+class Config
 {
     public array $data;
 
