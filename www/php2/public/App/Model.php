@@ -18,12 +18,13 @@ abstract class Model
         return $db->query($sql, [], static::class);
     }
 
-    public static function findById($id): array
+    public static function findById(int $id): array
     {
         $db = Db::instance();
         $sql = 'SELECT * FROM' . ' ' . static::TABLE .
-            ' WHERE id = ' . $id;
-        return $db->query($sql, [], static::class);
+            ' WHERE id = :id';
+        $params['id'] = $id;
+        return $db->query($sql, $params, static::class);
     }
 
     protected function insert()
@@ -78,12 +79,13 @@ abstract class Model
         }
     }
 
-    public static function delete($id): bool
+    public static function delete(int $id): bool
     {
         $sql = 'DELETE FROM' . ' ' . static::TABLE .
-            ' WHERE id = ' . $id;
+            ' WHERE id = :id';
 
+        $params['id'] = $id;
         $db = Db::instance();
-        return $db->execute($sql);
+        return $db->execute($sql, $params);
     }
 }
