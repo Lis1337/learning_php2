@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Article;
+use App\Models\User;
 
 require __DIR__ . '/autoload.php';
 
@@ -16,6 +17,13 @@ foreach ($allNews as $news) {
         '<label>delete post</label>' . '</a>' . '<br>';
     echo "</br>";
     $listId[] = $news->id;
+}
+
+$allAuthors = User::findAll();
+$listAuthor_id = [];
+
+foreach ($allAuthors as $author) {
+    $listAuthor_id[] = $author->id;
 }
 ?>
 
@@ -41,6 +49,15 @@ foreach ($allNews as $news) {
         <label for="content">Content
             <input type="text" name="content" size="200">
         </label>
+    </p>
+    <p>
+        <?php
+        echo 'Choose author id ' . '<select name="author_id">';
+        foreach ($listAuthor_id as $AuthorId) {
+            echo '<option>' . $AuthorId . '</option>';
+        }
+        echo '</select>';
+        ?>
     </p>
     <button>submit</button>
 </form>

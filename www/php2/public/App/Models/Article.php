@@ -9,6 +9,14 @@ class Article extends Model
 {
     public const TABLE = 'news';
 
-    public $title;
-    public $content;
+    public string $title;
+    public string $content;
+    public int $author_id;
+
+    public function __get(string $name)
+    {
+        if ($name == 'author') {
+            return User::findById($this->author_id);
+        }
+    }
 }

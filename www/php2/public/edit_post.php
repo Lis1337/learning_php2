@@ -11,6 +11,7 @@ if ($_POST['id']) {
 }
 $editPost->title = $_POST['title'];
 $editPost->content = $_POST['content'];
+$editPost->author_id = $_POST['author_id'];
 $editPost->save();
 
 header('Location: http://127.0.0.1/admin.php');
