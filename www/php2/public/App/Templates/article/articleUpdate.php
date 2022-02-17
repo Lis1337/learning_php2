@@ -9,7 +9,8 @@
 </head>
 <body>
 
-    <?php $articleProps = $this->article[array_key_first($this->article)]; ?>
+    <?php var_dump($_GET);
+    $articleProps = $this->article[array_key_first($this->article)]; ?>
     <h1>
         Edit article
     </h1>

@@ -11,12 +11,12 @@
 
     <h1>News</h1>
 
-    <a href="http://127.0.0.1/?ctrl=Article&id=">Create new post</a>
+    <a href="/Article/create">Create new post</a>
 
     <?php foreach ($this->news as $post) : ?>
         <article>
             <h2>
-                <a href="/?ctrl=Article&id=<?php echo $post->id ?>">
+                <a href="/Article/read?id=<?php echo $post->id ?>">
                     <?php echo 'id = ' . $post->id ?>
                     <?php echo 'title = ' . $post->title ?>
                 </a>

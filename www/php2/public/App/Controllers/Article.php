@@ -34,7 +34,7 @@ class Article extends Controller
 
     protected function readOrUpdateOrSave()
     {
-        if ((!isset($_GET['edit']) && empty($_POST))) {
+        if ((!isset($_GET['update']) && empty($_POST))) {
             $this->view->article = Post::findById($_GET['id']);
             $this->view->display(__DIR__ . '/../Templates/article/article.php');
 
@@ -49,7 +49,7 @@ class Article extends Controller
     protected function update()
     {
         $this->view->article = Post::findById($_GET['id']);
-        $this->view->display(__DIR__ . '/../Templates/article/articleEdit.php');
+        $this->view->display(__DIR__ . '/../Templates/article/articleUpdate.php');
     }
 
     protected function save()
@@ -62,12 +62,12 @@ class Article extends Controller
         $postSave->content = $_POST['content'];
         $postSave->author_id = $_POST['author_id'];
         $postSave->save();
-        header('Location: http://127.0.0.1/?ctrl=Index');
+        header('Location: http://127.0.0.1/Index');
     }
 
     protected function delete()
     {
         Post::delete($_GET['id']);
-        header('Location: http://127.0.0.1/?ctrl=Index');
+        header('Location: http://127.0.0.1/Index');
     }
 }

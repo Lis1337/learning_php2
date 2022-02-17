@@ -42,13 +42,13 @@ class Admin extends Controller
     protected function update()
     {
         $this->view->article = Post::findById((int) $_GET['id']);
-        $this->view->display(__DIR__ . '/../Templates/admin/adminEdit.php');
+        $this->view->display(__DIR__ . '/../Templates/admin/adminUpdate.php');
     }
 
     protected function save()
     {
         $postSave = new Post();
-        if ($_POST['id']) {
+        if (isset($_POST['id'])) {
             $postSave->id = (int) $_POST['id'];
         }
         $postSave->title = $_POST['title'];
@@ -56,12 +56,12 @@ class Admin extends Controller
         $postSave->author_id = (int) $_POST['author_id'];
         $postSave->save();
 
-        header('Location: http://127.0.0.1/?ctrl=Admin');
+        header('Location: http://127.0.0.1/Admin');
     }
 
     protected function delete()
     {
         Post::delete((int) $_GET['id']);
-        header('Location: http://127.0.0.1/?ctrl=Admin');
+        header('Location: http://127.0.0.1/Admin');
     }
 }

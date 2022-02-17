@@ -15,9 +15,9 @@
         echo "<br>" . 'Title: ' . $news->title . "</br>";
         echo 'Content: ' . $news->content . "</br>";
         echo 'ID: ' . $news->id . "</br>";
-        echo '<a href= ' . '/?ctrl=Admin&id=' . $news->id . '&edit' . '>' .
+        echo '<a href= ' . '/Admin/?id=' . $news->id . '&edit' . '>' .
             '<label>edit post</label>' . '</a>' . '<br>';
-        echo '<a href= ' . '/?ctrl=Admin&id=' . $news->id . '&delete' . '>' .
+        echo '<a href= ' . '/Admin/?id=' . $news->id . '&delete' . '>' .
             '<label>delete post</label>' . '</a>' . '</br>';
         $listId[] = $news->id;
     };
@@ -29,7 +29,7 @@
     } ?>
 
 
-    <form action="?ctrl=Admin" method="post" enctype="multipart/form-data">
+    <form action="Admin" method="post" enctype="multipart/form-data">
         <h2>Create new post</h2>
         <p>
             <label for="title">Enter title:

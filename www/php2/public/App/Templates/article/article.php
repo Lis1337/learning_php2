@@ -30,25 +30,25 @@
         <?php endforeach; ?>
     </article>
 
+    <h2>
+        <a href="/Index">
+            Return to main page
+        </a>
+    </h2>
+
     <h3>
         <?php
-        echo '<a ' . 'href="/?ctrl=Article&id=' .
-            $this->article[array_key_first($this->article)]->id . '&edit' . '">';
-        echo 'Edit article';
+        echo '<a ' . 'href="/Article/?update&id=' .
+            $this->article[array_key_first($this->article)]->id . '">';
+        echo 'Update article';
         echo '</a>';
         ?>
     </h3>
 
     <h3>
-        <a href="../index.php">
-            Return to main page
-        </a>
-    </h3>
-
-    <h3>
         <?php
-        echo '<a ' . 'href="/?ctrl=Article&id=' .
-            $this->article[array_key_first($this->article)]->id . '&delete' . '">';
+        echo '<a ' . 'href="/Article/?delete&id=' .
+            $this->article[array_key_first($this->article)]->id . '">';
         echo 'Delete article';
         echo '</a>';
         ?>

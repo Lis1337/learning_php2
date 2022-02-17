@@ -5,8 +5,11 @@ use App\Controllers\Index;
 require __DIR__ . '/autoload.php';
 
 
-$ctrl = $_GET['ctrl'] ?? 'Index';
-$class = '\App\Controllers\\' . $ctrl;
+$serverExplode = explode('/', $_SERVER['REQUEST_URI']);
+$ctrlName = $serverExplode[1];
 
-$ctrl = new $class();
-$ctrl();
+
+$class = '\App\Controllers\\' . $ctrlName;
+
+$ctrlName = new $class();
+$ctrlName();

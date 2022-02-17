@@ -39,7 +39,7 @@
         <button>Submit</button>
     </form>
     <h3>
-        <a href="../index.php">
+        <a href="/Index">
             Return to main page
         </a>
     </h3>
