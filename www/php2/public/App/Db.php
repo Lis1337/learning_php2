@@ -6,7 +6,7 @@ use PDO;
 
 class Db
 {
-    protected  static $instance = null;
+    protected static $instance = null;
 
     protected PDO $dbh;
 

@@ -1,13 +1,15 @@
 <?php
 
+namespace App;
 
-class View implements Countable
+
+class View implements \Countable
 {
     use SetAndGet;
 
     protected array $data = [];
 
-    public function assign (string $key, string $data)
+    public function assign(string $key, string $data)
     {
         $this->data[$key] = $data;
     }

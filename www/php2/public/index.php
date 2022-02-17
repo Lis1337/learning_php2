@@ -1,16 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
-use App\Models\Article;
-use App\Models\User;
+use App\Controllers\Index;
 
 require __DIR__ . '/autoload.php';
 
 
-$view = new View();
+$ctrl = $_GET['ctrl'] ?? 'Index';
+$class = '\App\Controllers\\' . $ctrl;
 
-$view->news = Article::findAll();
-$view->users = User::findAll();
-
-$view->display(__DIR__ . '/App/Templates/index.php');
+$ctrl = new $class();
+$ctrl();
