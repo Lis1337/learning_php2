@@ -9,24 +9,23 @@
 </head>
 <body>
 
-    <?php var_dump($_GET);
-    $articleProps = $this->article[array_key_first($this->article)]; ?>
+    <?php $articleProps = $this->article[array_key_first($this->article)]; ?>
     <h1>
-        Edit article
+        Update article
     </h1>
-    <form action="?ctrl=Article&id=<?php echo $articleProps->id ?>&edit" method="post"
+    <form action="Article/?update&id=<?php echo $articleProps->id ?>" method="post"
           enctype="multipart/form-data">
         <p>
             <label for="id">
                 id:
-                <input type="number" name="id" size="100"
+                <input type="number" name="id" size="100" readonly
                        value="<?php echo $articleProps->id ?>">
             </label>
         </p>
         <p>
             <label for="author_id">
                 author_id:
-                <input type="number" name="author_id" size="100"
+                <input type="number" name="author_id" size="100" readonly
                        value="<?php echo $articleProps->author_id ?>">
             </label>
         </p>
@@ -46,6 +45,9 @@
         </p>
         <button>Submit</button>
     </form>
+    <p>
+    <a href="/Index"><button>Return</button></a>
+    </p>
 
 </body>
 </html>

@@ -18,14 +18,14 @@
         <p>
             <label for="id">
                 id:
-                <input type="number" name="id" size="100"
+                <input type="number" name="id" size="100" readonly
                        value="<?php echo $articleProps->id ?>">
             </label>
         </p>
         <p>
             <label for="author_id">
                 author_id:
-                <input type="number" name="author_id" size="100"
+                <input type="number" name="author_id" size="100" readonly
                        value="<?php echo $articleProps->author_id ?>">
             </label>
         </p>

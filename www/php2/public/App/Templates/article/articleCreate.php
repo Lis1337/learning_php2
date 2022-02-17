@@ -40,7 +40,7 @@
     </form>
     <h3>
         <a href="/Index">
-            Return to main page
+            <button>Return to main page</button>
         </a>
     </h3>
 
