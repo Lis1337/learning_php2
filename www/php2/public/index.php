@@ -15,7 +15,7 @@ if (class_exists('\App\Controllers\\' . $ctrlName)) {
     $class = '\App\Controllers\\' . $ctrlName;
     $ctrlName = new $class;
 
-    if (isset($methodName)) {
+    if (isset($serverExplode[2])) {
         $methodName = $serverExplode[2];
 
         if (method_exists($ctrlName, $methodName)) {
