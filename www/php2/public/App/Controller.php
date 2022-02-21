@@ -17,16 +17,4 @@ abstract class Controller
     {
         return true;
     }
-
-    public function __invoke()
-    {
-        if ($this->access()) {
-            $this->handle();
-        } else {
-            die('Access denied');
-        }
-    }
-
-    abstract protected function handle();
-
 }

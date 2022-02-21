@@ -11,7 +11,7 @@
     <h1>
         Create article
     </h1>
-    <form action="?ctrl=Article&id=" method="post"
+    <form action="/Article/save" method="post"
           enctype="multipart/form-data">
         <p>
             <label for="author_id">

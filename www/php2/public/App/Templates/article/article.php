@@ -38,7 +38,7 @@
 
     <h3>
         <?php
-        echo '<a ' . 'href="/Article/?update&id=' .
+        echo '<a ' . 'href="/Article/update/?id=' .
             $this->article[array_key_first($this->article)]->id . '">';
         echo 'Update article';
         echo '</a>';
@@ -47,7 +47,7 @@
 
     <h3>
         <?php
-        echo '<a ' . 'href="/Article/?delete&id=' .
+        echo '<a ' . 'href="/Article/delete/?id=' .
             $this->article[array_key_first($this->article)]->id . '">';
         echo 'Delete article';
         echo '</a>';

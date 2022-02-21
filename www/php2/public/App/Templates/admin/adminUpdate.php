@@ -13,7 +13,7 @@
     <h1>
         Edit article
     </h1>
-    <form action="?ctrl=Admin&id=<?php echo $articleProps->id ?>" method="post"
+    <form action="/Admin/save/?id=<?php echo $articleProps->id ?>" method="post"
           enctype="multipart/form-data">
         <p>
             <label for="id">
@@ -46,8 +46,9 @@
         <button>Submit</button>
     </form>
 
+    <p>
+        <a href="/Admin"><button>Return</button></a>
+    </p>
+
 </body>
 </html>
-
-
-

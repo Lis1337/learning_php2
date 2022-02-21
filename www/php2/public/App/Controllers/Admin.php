@@ -10,42 +10,20 @@ use App\Models\User;
 
 class Admin extends Controller
 {
-    protected function access(): bool
+    public function read()
     {
-        return true;
+        $this->view->news = Post::findAll();
+        $this->view->users = User::findAll();
+        $this->view->display(__DIR__ . '/../Templates/admin/admin.php');
     }
 
-    protected function handle()
+    public function update()
     {
-        if (isset($_GET['id']) && isset($_GET['delete'])) {
-            $this->delete();
-        } else {
-            $this->readOrUpdateOrSave();
-        }
-    }
-
-    protected function readOrUpdateOrSave()
-    {
-        if (empty($_POST) && !isset($_GET['id'])) {
-            $this->view->news = Post::findAll();
-            $this->view->users = User::findAll();
-            $this->view->display(__DIR__ . '/../Templates/admin/admin.php');
-        }
-        elseif (empty($_POST) && isset($_GET['id'])) {
-            $this->update();
-        }
-        else {
-            $this->save();
-        }
-    }
-
-    protected function update()
-    {
-        $this->view->article = Post::findById((int) $_GET['id']);
+        $this->view->article = Post::findById($_GET['id']);
         $this->view->display(__DIR__ . '/../Templates/admin/adminUpdate.php');
     }
 
-    protected function save()
+    public function save()
     {
         $postSave = new Post();
         if (isset($_POST['id'])) {
@@ -56,12 +34,12 @@ class Admin extends Controller
         $postSave->author_id = (int) $_POST['author_id'];
         $postSave->save();
 
-        header('Location: http://127.0.0.1/Admin');
+        header('Location: /Admin');
     }
 
-    protected function delete()
+    public function delete()
     {
-        Post::delete((int) $_GET['id']);
-        header('Location: http://127.0.0.1/Admin');
+        Post::delete($_GET['id']);
+        header('Location: /Admin');
     }
 }

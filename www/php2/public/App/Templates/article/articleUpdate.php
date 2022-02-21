@@ -13,7 +13,7 @@
     <h1>
         Update article
     </h1>
-    <form action="Article/?update&id=<?php echo $articleProps->id ?>" method="post"
+    <form action="/Article/save/?id=<?php echo $articleProps->id ?>" method="post"
           enctype="multipart/form-data">
         <p>
             <label for="id">
@@ -45,12 +45,10 @@
         </p>
         <button>Submit</button>
     </form>
+
     <p>
     <a href="/Index"><button>Return</button></a>
     </p>
 
 </body>
 </html>
-
-
-

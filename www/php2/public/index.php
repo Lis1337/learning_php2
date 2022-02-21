@@ -9,7 +9,17 @@ $serverExplode = explode('/', $_SERVER['REQUEST_URI']);
 $ctrlName = $serverExplode[1];
 
 
-$class = '\App\Controllers\\' . $ctrlName;
+if (class_exists('\App\Controllers\\' . $ctrlName)) {
+    $class = '\App\Controllers\\' . $ctrlName;
+    $ctrlName = new $class;
 
-$ctrlName = new $class();
-$ctrlName();
+    if (isset($serverExplode[2])) {
+        $methodName = $serverExplode[2];
+        $ctrlName->$methodName();
+
+    } else {
+        $ctrlName->read();
+    }
+} else {
+    die('error 404');
+}

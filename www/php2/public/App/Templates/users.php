@@ -8,6 +8,7 @@
     <title>PHP-2</title>
     </head>
 <body>
+
     <h1>Users</h1>
     <table class="table-striped">
         <tr>
@@ -24,5 +25,6 @@
         </tr>
         <?php endforeach; ?>
     </table>
+
 </body>
 </html>

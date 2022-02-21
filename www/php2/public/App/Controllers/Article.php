@@ -10,49 +10,25 @@ use App\Models\Article as Post;
 
 class Article extends Controller
 {
-    protected function access(): bool
-    {
-        return true;
-    }
-
-    protected function handle()
-    {
-        if ($_GET['id'] == null && empty($_POST)) {
-            $this->create();
-        } elseif (isset($_GET['id']) && isset($_GET['delete'])) {
-            $this->delete();
-        } else {
-            $this->readOrUpdateOrSave();
-        }
-    }
-
-    protected function create()
+    public function create()
     {
         $this->view->users = User::findAll();
         $this->view->display(__DIR__ . '/../Templates/article/articleCreate.php');
     }
 
-    protected function readOrUpdateOrSave()
+    public function read()
     {
-        if ((!isset($_GET['update']) && empty($_POST))) {
-            $this->view->article = Post::findById($_GET['id']);
-            $this->view->display(__DIR__ . '/../Templates/article/article.php');
-
-        } elseif (!empty($_POST)) {
-            $this->save();
-
-        } else {
-            $this->update();
-        }
+        $this->view->article = Post::findById($_GET['id']);
+        $this->view->display(__DIR__ . '/../Templates/article/article.php');
     }
 
-    protected function update()
+    public function update()
     {
         $this->view->article = Post::findById($_GET['id']);
         $this->view->display(__DIR__ . '/../Templates/article/articleUpdate.php');
     }
 
-    protected function save()
+    public function save()
     {
         $postSave = new Post();
         if ($_POST['id']) {
@@ -62,12 +38,13 @@ class Article extends Controller
         $postSave->content = $_POST['content'];
         $postSave->author_id = $_POST['author_id'];
         $postSave->save();
-        header('Location: http://127.0.0.1/Index');
+        header('Location: /Index');
     }
 
-    protected function delete()
+    public function delete()
     {
+        var_dump($_GET);
         Post::delete($_GET['id']);
-        header('Location: http://127.0.0.1/Index');
+        header('Location: /Index');
     }
 }

@@ -10,7 +10,7 @@ use App\Models\User;
 
 class Index extends Controller
 {
-    protected function handle()
+    public function read()
     {
         $this->view->news = Article::findAll();
         $this->view->users = User::findAll();

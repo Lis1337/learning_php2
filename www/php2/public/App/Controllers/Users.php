@@ -9,12 +9,7 @@ use App\Models\User;
 
 class Users extends Controller
 {
-    protected function access(): bool
-    {
-        return true;
-    }
-
-    protected function handle()
+    public function read()
     {
         $this->view->users = User::findAll();
         $this->view->display(__DIR__ . '/../Templates/users.php');
