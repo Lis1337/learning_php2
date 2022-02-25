@@ -20,10 +20,10 @@ foreach ($allNews as $news) {
 }
 
 $allAuthors = User::findAll();
-$listAuthor_id = [];
+$listAuthorId = [];
 
 foreach ($allAuthors as $author) {
-    $listAuthor_id[] = $author->id;
+    $listAuthorId[] = $author->id;
 }
 ?>
 
@@ -53,7 +53,7 @@ foreach ($allAuthors as $author) {
     <p>
         <?php
         echo 'Choose author id ' . '<select name="author_id">';
-        foreach ($listAuthor_id as $AuthorId) {
+        foreach ($listAuthorId as $AuthorId) {
             echo '<option>' . $AuthorId . '</option>';
         }
         echo '</select>';

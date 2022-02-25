@@ -7,7 +7,7 @@ class View implements Countable
 
     protected array $data = [];
 
-    public function assign (string $key, string $data)
+    public function assign(string $key, string $data)
     {
         $this->data[$key] = $data;
     }
