@@ -1,16 +1,25 @@
 <?php
 
-declare(strict_types=1);
-
-use App\Models\Article;
-use App\Models\User;
-
 require __DIR__ . '/autoload.php';
 
 
-$view = new View();
+$serverExplode = explode('/', $_SERVER['REQUEST_URI']);
+$ctrlName = $serverExplode[1];
 
-$view->news = Article::findAll();
-$view->users = User::findAll();
+if (class_exists('\App\Controllers\\' . $ctrlName)) {
+    $class = '\App\Controllers\\' . $ctrlName;
+    $ctrlName = new $class;
 
-$view->display(__DIR__ . '/App/Templates/index.php');
+    if (isset($serverExplode[2])) {
+        $methodName = $serverExplode[2];
+
+        if (method_exists($ctrlName, $methodName)) {
+            $ctrlName->$methodName();
+        }
+    } else {
+        $ctrlName->index();
+    }
+
+} else {
+    die('error 404');
+}

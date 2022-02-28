@@ -1,9 +1,11 @@
 <?php
 
+namespace App;
+
 
 trait SetAndGet
 {
-    public function __set(string $name, array $value)
+    public function __set(string $name, $value)
     {
         $this->data[$name] = $value;
     }

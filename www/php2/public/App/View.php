@@ -1,7 +1,9 @@
 <?php
 
+namespace App;
 
-class View implements Countable
+
+class View implements \Countable
 {
     use SetAndGet;
 
