@@ -10,7 +10,7 @@ use App\Models\User;
 
 class Admin extends Controller
 {
-    public function read()
+    public function index()
     {
         $this->view->news = Post::findAll();
         $this->view->users = User::findAll();
@@ -33,7 +33,6 @@ class Admin extends Controller
         $postSave->content = $_POST['content'];
         $postSave->author_id = (int) $_POST['author_id'];
         $postSave->save();
-
         header('Location: /Admin');
     }
 

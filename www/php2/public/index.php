@@ -17,7 +17,7 @@ if (class_exists('\App\Controllers\\' . $ctrlName)) {
             $ctrlName->$methodName();
         }
     } else {
-        $ctrlName->read();
+        $ctrlName->index();
     }
 
 } else {

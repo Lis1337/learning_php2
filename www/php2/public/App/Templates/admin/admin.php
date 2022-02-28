@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form action="Admin/save" method="post" enctype="multipart/form-data">
+    <form action="/Admin/save" method="post" enctype="multipart/form-data">
         <h1>
             Create new post
         </h1>
@@ -53,12 +53,17 @@
         echo '<br>' . 'Title: ' . $news->title . '</br>';
         echo 'Content: ' . $news->content . '</br>';
         echo 'ID: ' . $news->id . '</br>';
+
         echo '<br>' . '<a href= ' . '/Admin/update/?id=' . $news->id . '>' .
             '<button>update post</button>' . '</a>' . '</br>';
+
         echo '<br>';
+
         echo '<a href= ' . '/Admin/delete/?id=' . $news->id . '>' .
             '<button>delete post</button>' . '</a>' . '</br>';
+
         $listId[] = $news->id;
+
         echo '<DIV STYLE="background-color:#000000; height:2px; width:100%;"></DIV>';
     };
     ?>

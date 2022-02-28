@@ -11,23 +11,19 @@
 
     <h1>Article</h1>
     <article>
-        <?php foreach ($this->article as $article) : ?>
         <h2>
-            <?php echo 'id = ' . $article->id ?>
+            <?php echo 'id = ' . $this->article->id ?>
         </h2>
-            <?php echo 'title = ' . $article->title ?>
+            <?php echo 'title = ' . $this->article->title ?>
         <p>
-            <?php echo 'content = ' . $article->content ?>
+            <?php echo 'content = ' . $this->article->content ?>
         </p>
         <p>
-            <?php echo 'author_id= ' . $article->author_id ?>
+            <?php echo 'author_id= ' . $this->article->author_id ?>
         </p>
         <p>
-            <?php foreach ($article->author as $name) : ?>
-                <?php echo 'author = ' . $name->name ?>
-            <?php endforeach; ?>
+            <?php echo 'author = ' . $this->article->author->name ?>
         </p>
-        <?php endforeach; ?>
     </article>
 
     <h2>
@@ -39,7 +35,7 @@
     <h3>
         <?php
         echo '<a ' . 'href="/Article/update/?id=' .
-            $this->article[array_key_first($this->article)]->id . '">';
+            $this->article->id . '">';
         echo 'Update article';
         echo '</a>';
         ?>
@@ -48,7 +44,7 @@
     <h3>
         <?php
         echo '<a ' . 'href="/Article/delete/?id=' .
-            $this->article[array_key_first($this->article)]->id . '">';
+            $this->article->id . '">';
         echo 'Delete article';
         echo '</a>';
         ?>

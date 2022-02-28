@@ -29,9 +29,7 @@
                 <?php echo 'author_id= ' . $post->author_id ?>
             </p>
             <p>
-                <?php foreach ($post->author as $name) :
-                echo 'author = ' . $name->name;
-                endforeach; ?>
+                <?php echo 'author = ' . $post->author->name; ?>
             </p>
         </article>
     <DIV STYLE="background-color:#000000; height:10px; width:100%;"></DIV>

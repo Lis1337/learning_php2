@@ -9,38 +9,37 @@
 </head>
 <body>
 
-    <?php $articleProps = $this->article[array_key_first($this->article)]; ?>
     <h1>
         Update article
     </h1>
-    <form action="/Article/save/?id=<?php echo $articleProps->id ?>" method="post"
+    <form action="/Article/save/?id=<?php echo $this->article->id ?>" method="post"
           enctype="multipart/form-data">
         <p>
             <label for="id">
                 id:
                 <input type="number" name="id" size="100" readonly
-                       value="<?php echo $articleProps->id ?>">
+                       value="<?php echo $this->article->id ?>">
             </label>
         </p>
         <p>
             <label for="author_id">
                 author_id:
                 <input type="number" name="author_id" size="100" readonly
-                       value="<?php echo $articleProps->author_id ?>">
+                       value="<?php echo $this->article->author_id ?>">
             </label>
         </p>
         <p>
             <label for="title">
                 title:
                 <input type="text" name="title" size="100" required
-                       value="<?php echo $articleProps->title ?>">
+                       value="<?php echo $this->article->title ?>">
             </label>
         </p>
         <p>
             <label for="content">
                 content:
                 <input type="text" name="content" size="100"
-                       value="<?php echo $articleProps->content ?>">
+                       value="<?php echo $this->article->content ?>">
             </label>
         </p>
         <button>Submit</button>
