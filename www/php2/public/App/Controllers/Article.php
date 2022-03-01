@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Controller;
+use App\Exceptions\Http404Exception;
 use App\Models\User;
 use App\Models\Article as Post;
 
@@ -19,6 +20,10 @@ class Article extends Controller
     public function read()
     {
         $this->view->article = Post::findById($_GET['id']);
+        //var_dump(empty($this->view->article));
+        if (empty($this->view->article)) {
+            throw new Http404Exception();
+        };
         $this->view->display(__DIR__ . '/../Templates/article/article.php');
     }
 

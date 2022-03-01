@@ -1,6 +1,6 @@
 test.php
 .env
-www/php2/public/config.php
+www/php2/public/App/Config.php
 logs/
 mysql/
 .idea/

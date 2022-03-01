@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Exceptions\Http500Exception;
 use PDO;
 
 class Db
@@ -33,7 +34,10 @@ class Db
     public function query($sql, $params=[], $class): array
     {
         $sth = $this->dbh->prepare($sql);
-        $sth->execute($params);
+        $res = $sth->execute($params);
+        if (!$res) {
+            throw new Http500Exception('Ошибка запроса: ' . $sql);
+        }
         return $sth->fetchAll(PDO::FETCH_CLASS, $class);
     }
 
